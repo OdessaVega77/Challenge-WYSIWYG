@@ -47,18 +47,15 @@ function clearSelection() {
     }
 }
 
+
+
 // Supprime la mise en forme de tout le document
 function eraser(style, status,value) {
-    document.execCommand("selectAll",false,null);
-    document.execCommand(style,status,value);
-    document.execCommand("formatBlock",false,"<p>");
-    document.execCommand("justifyLeft",false, null);
-    document.execCommand("unlink",false,null);
-    document.execCommand("foreColor",false,"#000000"); // A tester
-    //retirer le format liste
-    clearSelection();
-    $('#efface').removeClass('pin');
+    var str = $('#visuel main').text();
+        $('#visuel main').html(str);
+        // $('#visuel main').wrap('<div></div>');
 }
+
 
 // Action sur le texte sélectionné
 function actionOnText(style, status,value) {
@@ -192,7 +189,7 @@ function main() {
 main();
 
 
-// document.execCommand("bold")
+
 
 
 

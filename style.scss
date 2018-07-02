@@ -1,65 +1,115 @@
     body {
-    margin: 0;
+        margin: 0;
+        box-sizing: border-box;
 
-    #container {
+        #container {
 
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        margin-top: 10%;
-        width: 50%;
-        border-radius: 5%;
-
-
-        #onglets {
-            margin: 0;
-
-            display: flex;
-            justify-content: flex-end;
-            top: 0;
-            height: 20%; // background-color: grey;
-            list-style-type: none;
-
-            li {
-                width: 10%;
-                color: black;
-                padding: 5px 10px;
-            }
-            .first {
-                background-color: #CCD1D1;
-            }
-            .second {
-                background-color: #AEB2B2;
-            }
-        }
-        #visuel {
             display: flex;
             flex-direction: column;
-            width: 100%;
-            border: 1px solid black;
-            header {
-                background-color: #CCD1D1; 
+            margin: 0 auto;
+            margin-top: 10%;
+            width: 50%;
+            border-radius: 5%;
+
+
+            #onglets {
+                margin: 0;
+
+                display: flex;
+                justify-content: flex-end;
+                top: 0;
+                height: 20%; // background-color: grey;
+                list-style-type: none;
+
+                li {
+                    width: 10%;
+                    color: black;
+                    border: 1px solid transparent;
+                    border-radius: 6px 6px 0px 0px;
+                    padding: 5px 10px;
+                }
+                .first {
+                    background-color: #CCD1D1;
+                }
+                .second {
+                    background-color: #AEB2B2;
+                }
+            }
+            #visuel {
+                display: flex;
+                flex-direction: column;
                 width: 100%;
+                header {
+                    background-color: #CCD1D1;
+                    width: 100%;
 
-                #barretaches {
-                    display: flex;
+                    #barretaches {
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin-top: 5px;
+                        padding-left: 10px;
 
 
-                    select {
-                        width: 100px;
-                    }
-                    li {
-                        list-style: none;
-                        margin-right: 10px;
+                        select {
+                            margin-top: 5px;
+                            width: 100px;
+                        }
+                        li {
+                            list-style: none;
+                            margin-right: 13px;
+
+                            i {
+                                padding: 8px;
+                            }
+
+                            &.tache {
+
+                                border: 0px solid white;
+
+                                &.tache:hover {
+                                    border: 1px solid white;
+                                    background: #AEB2B2;
+                                }
+                            }
+
+                            &.tache .infob {
+                                visibility: hidden;
+                                width: 80px;
+                                background-color: black;
+                                color: #fff;
+                                text-align: center;
+                                padding: 5px 0;
+                                border-radius: 6px;
+                                position: absolute;
+                                z-index: 1;
+                                top: 100%;
+                                left: 50%;
+                                margin-left: -40px;
+
+                                &.tache .infob::after {
+                                    content: " ";
+                                    position: absolute;
+                                    bottom: 100%;
+                                    left: 50%;
+                                    margin-left: -5px;
+                                    border-width: 5px;
+                                    border-style: solid;
+                                    border-color: transparent transparent black transparent;
+                                }
+                                &.tache:hover .infob {
+                                    visibility: visible;
+                                }
+                            }
+                        }
                     }
                 }
+
                 main {
 
-                    border-bottom: 1px solid;
-                    border-left: 1px solid;
-                    border-right: 1px solid;
+                    border: 1px solid black;
+                    border-top: 0;
+                    padding: 10px;
                 }
             }
         }
     }
-}

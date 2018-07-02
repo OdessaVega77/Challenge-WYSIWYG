@@ -1,5 +1,6 @@
 body {
-  margin: 0; }
+  margin: 0;
+  box-sizing: border-box; }
   body #container {
     display: flex;
     flex-direction: column;
@@ -17,6 +18,8 @@ body {
       body #container #onglets li {
         width: 10%;
         color: black;
+        border: 1px solid transparent;
+        border-radius: 6px 6px 0px 0px;
         padding: 5px 10px; }
       body #container #onglets .first {
         background-color: #CCD1D1; }
@@ -25,19 +28,53 @@ body {
     body #container #visuel {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      border: 1px solid black; }
+      width: 100%; }
       body #container #visuel header {
         background-color: #CCD1D1;
         width: 100%; }
         body #container #visuel header #barretaches {
-          display: flex; }
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 5px;
+          padding-left: 10px; }
           body #container #visuel header #barretaches select {
+            margin-top: 5px;
             width: 100px; }
           body #container #visuel header #barretaches li {
             list-style: none;
-            margin-right: 10px; }
-        body #container #visuel header main {
-          border-bottom: 1px solid;
-          border-left: 1px solid;
-          border-right: 1px solid; }
+            margin-right: 13px; }
+            body #container #visuel header #barretaches li i {
+              padding: 8px; }
+            body #container #visuel header #barretaches li.tache {
+              border: 0px solid white; }
+              body #container #visuel header #barretaches li.tache.tache:hover {
+                border: 1px solid white;
+                background: #AEB2B2; }
+            body #container #visuel header #barretaches li.tache .infob {
+              visibility: hidden;
+              width: 80px;
+              background-color: black;
+              color: #fff;
+              text-align: center;
+              padding: 5px 0;
+              border-radius: 6px;
+              position: absolute;
+              z-index: 1;
+              top: 100%;
+              left: 50%;
+              margin-left: -40px; }
+              body #container #visuel header #barretaches li.tache .infob.tache .infob::after {
+                content: " ";
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent transparent black transparent; }
+              body #container #visuel header #barretaches li.tache .infob.tache:hover .infob {
+                visibility: visible; }
+      body #container #visuel main {
+        border: 1px solid black;
+        border-top: 0;
+        padding: 10px; }

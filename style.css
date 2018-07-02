@@ -1,6 +1,8 @@
 body {
   margin: 0;
   box-sizing: border-box; }
+  body .hidden {
+    display: none !important; }
   body #container {
     display: flex;
     flex-direction: column;
@@ -22,21 +24,27 @@ body {
         border-radius: 6px 6px 0px 0px;
         padding: 5px 10px; }
       body #container #onglets .first {
-        background-color: #CCD1D1; }
+        background-color: #d8d8d8;
+        cursor: pointer; }
       body #container #onglets .second {
-        background-color: #AEB2B2; }
+        background-color: #b8b8b8;
+        cursor: pointer; }
+      body #container #onglets .active {
+        background-color: #d8d8d8; }
     body #container #visuel {
       display: flex;
       flex-direction: column;
       width: 100%; }
       body #container #visuel header {
-        background-color: #CCD1D1;
+        background-color: #d8d8d8;
         width: 100%; }
         body #container #visuel header #barretaches {
           display: flex;
           flex-wrap: wrap;
           margin-top: 5px;
-          padding-left: 10px; }
+          padding-left: 10px;
+          font-family: "Arial";
+          font-size: 10px; }
           body #container #visuel header #barretaches select {
             margin-top: 5px;
             width: 100px; }
@@ -46,35 +54,46 @@ body {
             body #container #visuel header #barretaches li i {
               padding: 8px; }
             body #container #visuel header #barretaches li.tache {
-              border: 0px solid white; }
-              body #container #visuel header #barretaches li.tache.tache:hover {
-                border: 1px solid white;
-                background: #AEB2B2; }
-            body #container #visuel header #barretaches li.tache .infob {
-              visibility: hidden;
-              width: 80px;
-              background-color: black;
-              color: #fff;
-              text-align: center;
-              padding: 5px 0;
-              border-radius: 6px;
-              position: absolute;
-              z-index: 1;
-              top: 100%;
-              left: 50%;
-              margin-left: -40px; }
-              body #container #visuel header #barretaches li.tache .infob.tache .infob::after {
-                content: " ";
+              position: relative;
+              border: 1px solid transparent; }
+              body #container #visuel header #barretaches li.tache:hover {
+                border: 1px solid #9c9c9c;
+                background: #d8d8d8; }
+                body #container #visuel header #barretaches li.tache:hover .infob {
+                  visibility: visible; }
+              body #container #visuel header #barretaches li.tache .infob {
+                visibility: hidden;
+                width: 80px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                padding: 2px 0;
+                border-radius: 4px;
                 position: absolute;
-                bottom: 100%;
+                z-index: 1;
+                top: 100%;
                 left: 50%;
-                margin-left: -5px;
-                border-width: 5px;
-                border-style: solid;
-                border-color: transparent transparent black transparent; }
-              body #container #visuel header #barretaches li.tache .infob.tache:hover .infob {
-                visibility: visible; }
+                margin-top: 10px;
+                margin-left: -40px; }
+                body #container #visuel header #barretaches li.tache .infob::after {
+                  content: "";
+                  position: absolute;
+                  bottom: 100%;
+                  left: 50%;
+                  margin-left: -5px;
+                  border-width: 5px;
+                  border-style: solid;
+                  border-color: transparent transparent black transparent; }
+          body #container #visuel header #barretaches #lien,
+          body #container #visuel header #barretaches #pas-de-lien {
+            cursor: pointer; }
       body #container #visuel main {
-        border: 1px solid black;
-        border-top: 0;
+        border: 1px solid #b8b8b8;
+        border-top: none;
         padding: 10px; }
+    body #container #code {
+      width: 100%;
+      min-height: 400px;
+      border: 1px solid black;
+      border-top: 0;
+      background-color: white; }

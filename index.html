@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="onglets">
+            <li class="onglet first">Visuel</li>
+            <li class="onglet second ">Code</li>
+        </ul>
+        <section id="visuel">
+            <header>
+                <ul id="barretaches">
+                    <li>
+                        <select>
+                            <option value="paragraphe">Paragraphe</option>
+                            <option value="titre1">Titre 1</option>
+                            <option value="titre2">Titre 2</option>
+                            <option value="titre3">Titre 3</option>
+                            <option value="titre4">Titre 4</option>
+                            <option value="titre5">Titre 5</option>
+                            <option value="titre6">Titre 6</option>
+                        </select>
+                    </li>
+                    <li id="gras" class="tache"><i class="fas fa-bold"></i>
+                        <div class="infob">bold</div>
+                    </li>
+                    <li id="italique" class="tache"><i class="fas fa-italic"></i>
+                        <div class="infob">italic</div>
+                    </li>
+                    <li id="liste-ul" class="tache"><i class="fas fa-list-ul"></i>
+                        <div class="infob">bullet list</div>
+                    </li>
+                    <li id="liste-ol"  class="tache"><i class="fas fa-list-ol"></i>
+                        <div class="infob">liste-ol</div>
+                    </li>
+                    <li id=" al-gauche"  class="tache"><i class="fas fa-align-left"></i>
+                        <div class="infob">align left</div>
+                    </li>
+                    <li id="al-centre" class="tache"><i class="fas fa-align-center"></i>
+                        <div class="infob">align center</div>
+                    </li>
+                    <li id="al-droite" class="tache"><i class="fas fa-align-right"></i>
+                        <div class="infob"> align right</div>
+                    </li>
+                    <li id="al-justifie" class="tache"><i class="fas fa-align-justify"></i>
+                        <div class="infob">justify</div>
+                    </li>
+                    <li id="lien" class="tache"><i class="fas fa-link"></i>
+                        <div class="infob">link</div>
+                    </li>
+                    <li id="pas-de-lien" class="tache"><i class="fas fa-unlink"></i>
+                        <div class="infob">unlink</div>
+                    </li>
+                    <li id="couleur" class="tache">
+                        <div class="infob">colorpicker</div>
+                    </li>
+                    <li id="image" class="tache"><i class="far fa-image"></i>
+                        <div class="infob">picture</div>
+                    </li>
+                    <li id="efface" class="tache"><i class="fas fa-eraser"></i>
+                        <div class="infob">Erase</div>
+                    </li>
+                </ul>
+            </header>
+            <main contenteditable="true">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, rem ipsum temporibus deserunt unde dolores. Tempora ut, fugiat, quia voluptatum consectetur odit fuga! Obcaecati laborum, repudiandae itaque nobis facilis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quibusdam rem reprehenderit animi in fugit, consequuntur natus nesciunt placeat id ex quisquam earum delectus soluta inventore illum nostrum. Aliquam, nobis.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facilis sed sequi consequatur nesciunt deleniti doloribus explicabo fugiat unde, voluptatibus, culpa aspernatur quo vero recusandae accusantium, necessitatibus minus consequuntur suscipit.
+                </p>
+            </main>
+        </section>
+
+        <section id="code" class="hidden">
+            <main>
+            </main>
+        </section>
+
+    </div>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="index.js"></script>
+   <!-- <script src="mainscript.js"></script> -->
+</body>
+
+</html>

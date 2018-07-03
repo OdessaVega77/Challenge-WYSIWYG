@@ -1,0 +1,190 @@
+.black{
+	background:#000000;
+}
+.burntorange{
+	background:#993300;
+}
+.darkolive{
+	background:#333300;
+}
+.darkgreen{
+	background:#003300;
+}
+.darkazure{
+	background:#003366;
+}
+.navyblue{
+	background:#000080;
+}
+.indigo{
+	background:#333399;
+}
+.verydarkgray{
+	background:#333333;
+}
+.maroon{
+	background:#800000;
+}
+.orange{
+	background:#FF6600;
+}
+.olive{
+	background:#808000;
+}
+.green{
+	background:#008000;
+}
+.teal{
+	background:#008080;
+}
+.blue{
+	background:#0000FF;
+}
+.grayishblue{
+	background:#666699;
+}
+.gray{
+	background:#808080;
+}
+.red{
+	background:#FF0000;
+}
+.amber{
+	background:#FF9900;
+}
+.yellowgreen{
+	background:#99CC00;
+}
+.seagreen{
+	background:#339966;
+}
+.turquoise{
+	background:#33CCCC;
+}
+.royalblue{
+	background:#3366FF;
+}
+.purple{
+	background:#800080;
+}
+.mediumgray{
+	background:#999999;
+}
+.magenta{
+	background:#FF00FF;
+}
+.gold{
+	background:#FFCC00;
+}
+.yellow{
+	background:#FFFF00;
+}
+.lime{
+	background:#00FF00;
+}
+.aqua{
+	background:#00FFFF;
+}
+.skyblue{
+	background:#00CCFF;
+}
+.redviolet{
+	background:#993366;
+}
+.white{
+	background:#FFFFFF;
+}
+.pink{
+	background:#FF99CC;
+}
+.peach{
+	background:#FFCC99;
+}
+.lightyellow{
+	background:#FFFF99;
+}
+.palegreen{
+	background:#CCFFCC;
+}
+.palecyan{
+	background:#CCFFFF;
+}
+.ligthskyblue{
+	background:#99CCFF;
+}
+.plum{
+	background:#CC99FF;
+}
+.transparent{
+	background:transparent;
+}
+div#palette{
+	width:140px;
+	padding:5px;
+	border:1px solid #CECECE;
+	font-size:12px;
+	background:#FFFFFF;
+	position:relative;
+}
+div#palette .arrow_up{
+	width:0;
+	height:0;
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+	border-bottom:10px solid #CECECE;
+	position:absolute;
+	top:-10px;
+	left:65px;
+}
+div#camaieu{
+	width:100%;
+	height:90px;
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-around;
+}
+div#camaieu > div, div#customcolor > div{
+	width:15px;
+	height:15px;
+	border:1px solid #CECECE;
+}
+div#camaieu div #cross{
+	width:100%;
+	height:100%;
+	position:relative;
+	transform: rotate(45deg);
+
+}
+div#camaieu div #cross:before,#cross:after{
+	content:"";
+	position:absolute;
+	z-index:-1;
+	background:#000000;
+
+}
+div#camaieu div #cross:before{
+	left:50%;
+	width:20%;
+	margin-left:-10%;
+	height:100%;
+}
+div#camaieu div #cross:after{
+	top:50%;
+	height:20%;
+	margin-top:-10%;
+	width:100%;
+}
+div#customize{
+	font-family:verdana;
+	background:#E6E6E6;
+	padding:3px 0;
+	margin-top:2px;
+	margin-bottom:1px;
+}
+div#customcolor > div{
+	border:1px solid #CECECE;
+}
+div#customcolor{
+	display:flex;
+	justify-content:space-around;
+}

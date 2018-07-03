@@ -1,11 +1,18 @@
+'use strict';
+
 $(function() {
     console.log('ready');
-});
+
+
+
+var selColor;
+
 
 
 // Récupère le code HTML du contenu de la div #main
 function getMainContent(){
-    var c = $('#main')[0].outerHTML;
+    var c = $('#visuel main')[0].outerHTML;
+    console.log(c);
     return c; 
 }
 
@@ -22,7 +29,7 @@ function displayCode(tab) {
             text = text + tab[i];
         }
     }
-    $('#code').html(text);
+    $('#code main').html(text);
 }
 
 
@@ -73,8 +80,12 @@ function actionOnText(style, status,value) {
 
 // Fonction principale
 function main() {
+
+
+
     $('#main').on('keyup', function(){
         var main_content = getMainContent();  
+        console.log(main_content);
         displayCode(main_content);
     });
     
@@ -148,15 +159,36 @@ function main() {
         actionOnText("unlink",false,null);
     });   
 
-    // ne fonctionne pas / Intégrer le color picker
-    $('#couleur').on('click', function(){
-        var color = prompt('Saisissez une couleur prédéfinie ou un code hexadécimal :');
-        document.onclick = actionOnText("foreColor",false,color);
+     $("#camaieu div").on("click",function() {
+        selColor = $(this).attr("class");
+        //$("li").removeClass("selected");
+        //$(this).toggleClass("selected");
+        console.log(selColor);
+        // console.log(selColor2);
+        document.onclick = actionOnText("foreColor",false,selColor);
+        console.log(selColor);
+
+
     });
+    
+    $('#couleur').on('click', function(){
+        //var color = prompt('Saisissez une couleur prédéfinie ou un code hexadécimal :');
+        // document.onclick = actionOnText("foreColor",false,color);
+
+        //Faire apparaitre la palette
+        //récupérer la couleur cliquée
+        //insérer la couleur dans le execcommand
+        $('#palette').toggleClass('hidden');
+
+        document.onclick = actionOnText("foreColor",false,selColor);
+        // console.log(selColor);
+    });
+
 
     // ne fonctionne pas / Intégrer le travail de Loutfi
     $('#image').on('click', function(){
         var imgSrc = prompt("Entrez l'URL de l'image : ")
+        console.log("url = " + imgSrc);
         if (imgSrc != null) {
             document.onclick = actionOnText("insertImage",false,imgSrc);
             }
@@ -167,28 +199,23 @@ function main() {
         actionOnText("removeFormat",false,null);
     }); 
 
+
+
+
+   
+
     
-
-
-
-
-
-
-
-
-
-
-
 
     //document.onkeyup = actionOnText;
     //document.onmouseup = actionOnText;
     //document.onmouseup = bold;
       
 }
-
+//initialiseLeColorPicker();
 main();
 
 
+});
 
 
 

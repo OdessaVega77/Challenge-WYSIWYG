@@ -73,6 +73,18 @@ function actionOnText(style, status,value) {
     }
 }
 
+// Récupère l'URL de l'image sélectionnée
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            // récupération de l'url de l'image sur notre ordinateur
+            $('#imgs').attr('src', e.target.result);
+            console.log(($('#imgs').attr('src')));
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
 
 // Fonction principale
@@ -108,6 +120,7 @@ function main() {
     $('#liste-deroulante option:nth-of-type(2)').on('click', function(){
         actionOnText("formatBlock",false,"<h1>");
     });
+
     $('#liste-deroulante option:nth-of-type(3)').on('click', function(){
         actionOnText("formatBlock",false,"<h2>");
     });
@@ -189,15 +202,25 @@ function main() {
 
 
 
-    // ne fonctionne pas / Intégrer le travail de Loutfi
+    // Au clic insérer une image
+    // TROUVER COMMENT INSERER L'IMAGE LA OU SE TROUVE LE CURSEUR
     $('#image').on('click', function(){
-        var imgSrc = prompt("Entrez l'URL de l'image : ")
-        console.log("url = " + imgSrc);
-        if (imgSrc != null) {
-            document.onclick = actionOnText("insertImage",false,imgSrc);
+        $("input[id='insert_img']").change(function() {
+            // Création d'une div et d'une img pour placer l'img
+            $('#editable').append('<div id="voir"></div>');
+            $('#voir').append('<img id="imgs"></img>');
+            readURL(this);
+            // L'url est stockée dans une variable 
+            var imgSrc = $('#imgs').attr('src');
+            if (imgSrc != null) {
+                document.onclick = actionOnText("insertImage", false, imgSrc);
             }
+        });
+
     });
 
+    // Supprime les styles de la feuille, l'alignement
+    // SUPPRIME L'IMAGE AUSSI !
     $('#efface').on('click', function(){
         $(this).addClass('pin');
         actionOnText("removeFormat",false,null);
@@ -206,6 +229,86 @@ function main() {
 
 
 
+
+    // Raccourcis clavier
+    var touche = false;
+    
+    // Raccourci Bold crtl+b(firefox) ou cmd+b(chrome)
+    $(document).keyup(function(e) {
+        if (e.which == 17 || e.which == 91) touche = false;
+    }).keydown(function(e) {
+        if (e.which == 17 || e.which == 91) touche = true;
+        if (e.which == 66 && touche == true) {
+            actionOnText("bold", false, null);
+            return false;
+        }
+    });
+
+    // Raccourci Italique crtl+i(firefox) ou cmd+i(chrome)
+    $(document).keyup(function(e) {
+        if (e.which == 17 || e.which == 91) touche = false;
+    }).keydown(function(e) {
+        if (e.which == 17 || e.which == 91) touche = true;
+        if (e.which == 73 && touche == true) {
+            actionOnText("italic", false, null);
+            return false;
+        }
+    });
+
+    // Raccourci liste crtl+j(firefox) ou cmd+j(chrome)
+    $(document).keyup(function(e) {
+        if (e.which == 17 || e.which == 91) touche = false;
+    }).keydown(function(e) {
+        if (e.which == 17 || e.which == 91) touche = true;
+        if (e.which == 74 && touche == true) {
+            actionOnText("insertUnorderedList",false,null);
+            return false;
+        }
+    });
+    
+    // Raccourci alignement à gauche crtl+shift+l(firefox) ou cmd+shift+l(chrome)
+    $(document).keyup(function(e) {
+        if (e.which == 17 || e.which == 91) touche = false;
+    }).keydown(function(e) {
+        if (e.which == 17 || e.which == 91) touche = true;
+        if (e.which == 76 && touche == true) {
+            actionOnText("justifyLeft", false, null);
+            return false;
+        }
+    });
+    
+    // Raccourci liste crtl+e(firefox) ou cmd+e(chrome)
+    $(document).keyup(function(e) {
+        if (e.which == 17 || e.which == 91) touche = false;
+    }).keydown(function(e) {
+        if (e.which == 17 || e.which == 91) touche = true;
+        if (e.which == 69 && touche == true) {
+            actionOnText("justifyCenter", false, null);
+            return false;
+        }
+    });
+
+    // Raccourci liste crtl+r(firefox) ou cmd+r(chrome)
+    $(document).keyup(function(e) {
+        if (e.which == 17 || e.which == 91) touche = false;
+    }).keydown(function(e) {
+        if (e.which == 17 || e.which == 91) touche = true;
+        if (e.which == 82 && touche == true) {
+            actionOnText("justifyRight", false, null);
+            return false;
+        }
+    });
+    
+    // Raccourci liste crtl+j(firefox) ou cmd+j(chrome)
+    $(document).keyup(function(e) {
+        if (e.which == 17 || e.which == 91) touche = false;
+    }).keydown(function(e) {
+        if (e.which == 17 || e.which == 91) touche = true;
+        if (e.which == 74 && touche == true) {
+            actionOnText("justifyFull", false, null);
+            return false;
+        }
+    });
    
 
     
@@ -215,7 +318,7 @@ function main() {
     //document.onmouseup = bold;
       
 }
-//initialiseLeColorPicker();
+
 main();
 
 

@@ -18,7 +18,7 @@
             <header>
                 <ul id="barretaches">
                     <li>
-                        <select>
+                        <select id="liste-deroulante">
                             <option value="paragraphe">Paragraphe</option>
                             <option value="titre1">Titre 1</option>
                             <option value="titre2">Titre 2</option>
@@ -28,68 +28,147 @@
                             <option value="titre6">Titre 6</option>
                         </select>
                     </li>
-                    <li id="gras" class="tache"><i class="fas fa-bold"></i>
+                    <li id="gras" class="tache">
+                        <i class="fas fa-bold"></i>
                         <input type="button">
                         <div class="infob">bold</div>
                     </li>
-                    <li id="italique" class="tache"><i class="fas fa-italic"></i>
+                    <li id="italique" class="tache">
+                        <i class="fas fa-italic"></i>
                         <input type="button">
                         <div class="infob">italic</div>
                     </li>
-                    <li id="liste-ul" class="tache"><i class="fas fa-list-ul"></i>
-                        <input type="button"><div class="infob">bullet list</div>
+                    <li id="liste-ul" class="tache">
+                        <i class="fas fa-list-ul"></i>
+                        <input type="button">
+                        <div class="infob">bullet list</div>
                     </li>
-                    <li id="liste-ol"  class="tache"><i class="fas fa-list-ol"></i>
-                        <input type="button"><div class="infob">liste-ol</div>
+                    <li id="liste-ol" class="tache">
+                        <i class="fas fa-list-ol"></i>
+                        <input type="button">
+                        <div class="infob">liste-ol</div>
                     </li>
-                    <li id=" al-gauche"  class="tache"><i class="fas fa-align-left"></i>
-                        <input type="button"><div class="infob">align left</div>
+                    <li id=" al-gauche" class="tache">
+                        <i class="fas fa-align-left"></i>
+                        <input type="button">
+                        <div class="infob">align left</div>
                     </li>
-                    <li id="al-centre" class="tache"><i class="fas fa-align-center"></i>
-                        <input type="button"><div class="infob">align center</div>
+                    <li id="al-centre" class="tache">
+                        <i class="fas fa-align-center"></i>
+                        <input type="button">
+                        <div class="infob">align center</div>
                     </li>
-                    <li id="al-droite" class="tache"><i class="fas fa-align-right"></i>
-                        <input type="button"><div class="infob"> align right</div>
+                    <li id="al-droite" class="tache">
+                        <i class="fas fa-align-right"></i>
+                        <input type="button">
+                        <div class="infob"> align right</div>
                     </li>
-                    <li id="al-justifie" class="tache"><i class="fas fa-align-justify"></i>
-                        <input type="button"><div class="infob">justify</div>
+                    <li id="al-justifie" class="tache">
+                        <i class="fas fa-align-justify"></i>
+                        <input type="button">
+                        <div class="infob">justify</div>
                     </li>
-                    <li id="lien" class="tache"><i class="fas fa-link"></i>
-                        <input type="button"><div class="infob">link</div>
+                    <li id="lien" class="tache">
+                        <i class="fas fa-link"></i>
+                        <input type="button">
+                        <div class="infob">link</div>
                     </li>
-                    <li id="pas-de-lien" class="tache"><i class="fas fa-unlink"></i>
-                        <input type="button"><div class="infob">unlink</div>
+                    <li id="pas-de-lien" class="tache">
+                        <i class="fas fa-unlink"></i>
+                        <input type="button">
+                        <div class="infob">unlink</div>
                     </li>
                     <li id="couleur" class="tache">
-                        <label for="colorset">A</label>
-                        <input id="colorset" type="color">
+                        <input type="button">
+                        <i class="fas fa-font"></i>
+                        <div id="barre" class="black"></div>
                         <div class="infob">colorpicker</div>
+                        <div id="palette" class="hidden">
+                            <div class="arrow_up"></div>
+                            <div id="camaieu">
+                                <div class="black"><input type="button"></div>
+                                <div class="burntorange"><input type="button"></div>
+                                <div class="darkolive"><input type="button"></div>
+                                <div class="darkgreen"><input type="button"></div>
+                                <div class="darkazure"><input type="button"></div>
+                                <div class="navyblue"><input type="button"></div>
+                                <div class="indigo"><input type="button"></div>
+                                <div class="verydarkgray"><input type="button"></div>
+                                <div class="maroon"><input type="button"></div>
+                                <div class="orange"><input type="button"></div>
+                                <div class="olive"><input type="button"></div>
+                                <div class="green"><input type="button"></div>
+                                <div class="teal"><input type="button"></div>
+                                <div class="blue"><input type="button"></div>
+                                <div class="grayishblue"><input type="button"></div>
+                                <div class="gray"><input type="button"></div>
+                                <div class="red"><input type="button"></div>
+                                <div class="amber"><input type="button"></div>
+                                <div class="yellowgreen"><input type="button"></div>
+                                <div class="seagreen"><input type="button"></div>
+                                <div class="turquoise"><input type="button"></div>
+                                <div class="royalblue"><input type="button"></div>
+                                <div class="purple"><input type="button"></div>
+                                <div class="mediumgray"><input type="button"></div>
+                                <div class="magenta"><input type="button"></div>
+                                <div class="gold"><input type="button"></div>
+                                <div class="yellow"><input type="button"></div>
+                                <div class="lime"><input type="button"></div>
+                                <div class="aqua"><input type="button"></div>
+                                <div class="skyblue"><input type="button"></div>
+                                <div class="redviolet"><input type="button"></div>
+                                <div class="white"><input type="button"></div>
+                                <div class="pink"><input type="button"></div>
+                                <div class="peach"><input type="button"></div>
+                                <div class="lightyellow"><input type="button"></div>
+                                <div class="palegreen"><input type="button"></div>
+                                <div class="palecyan"><input type="button"></div>
+                                <div class="ligthskyblue"><input type="button"></div>
+                                <div class="plum"><input type="button"></div>
+                                <div class="">
+                                    <div id="cross"></div>
+                                </div>
+                            </div>
+                            <div id="customize">Custom color...</div>
+                            <div id="customcolor">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
                     </li>
-                    <li id="image" class="tache"><i class="far fa-image"></i>
-                        <input type="button"><div class="infob">picture</div>
+                    <li id="image" class="tache">
+                        <i class="far fa-image"></i>
+                        <input type="button">
+                        <div class="infob">picture</div>
                     </li>
-                    <li id="efface" class="tache"><i class="fas fa-eraser"></i>
-                        <input type="button"><div class="infob">Erase</div>
+                    <li id="efface" class="tache">
+                        <i class="fas fa-eraser"></i>
+                        <input type="button">
+                        <div class="infob">Erase</div>
                     </li>
                 </ul>
             </header>
             <main contenteditable="true">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam beatae, rem ipsum temporibus deserunt unde dolores. Tempora ut, fugiat, quia voluptatum consectetur odit fuga! Obcaecati laborum, repudiandae itaque nobis facilis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quibusdam rem reprehenderit animi in fugit, consequuntur natus nesciunt placeat id ex quisquam earum delectus soluta inventore illum nostrum. Aliquam, nobis.
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facilis sed sequi consequatur nesciunt deleniti doloribus explicabo fugiat unde, voluptatibus, culpa aspernatur quo vero recusandae accusantium, necessitatibus minus consequuntur suscipit.
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam quibusdam rem reprehenderit animi in fugit, consequuntur natus nesciunt placeat id ex quisquam earum delectus soluta inventore illum nostrum. Aliquam, nobis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic facilis sed sequi consequatur nesciunt deleniti doloribus explicabo fugiat unde, voluptatibus, culpa aspernatur quo vero recusandae accusantium, necessitatibus minus consequuntur suscipit.
                 </p>
             </main>
         </section>
-
         <section id="code" class="hidden">
             <main>
             </main>
         </section>
-
     </div>
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="index.js"></script>
-   <!-- <script src="mainscript.js"></script> -->
+    <!-- <script src="jquery-3.3.1.min.js"></script> -->
+    <script src="jquery-3.3.1.js"></script>
+    <!--  <script src="index.js"></script> -->
+    <script src="mainscript.js"></script>
 </body>
 
 </html>

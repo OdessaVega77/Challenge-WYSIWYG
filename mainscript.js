@@ -3,16 +3,12 @@
 $(function() {
     console.log('ready');
 
-
-
 var selColor;
-
 
 
 // Récupère le code HTML du contenu de la div #main
 function getMainContent(){
     var c = $('#visuel main')[0].outerHTML;
-    console.log(c);
     return c; 
 }
 
@@ -44,7 +40,8 @@ function getSelectedText() {
     return text;
 }
 
-// Déselectionne toute sélection
+
+// Déselectionne toute la sélection
 function clearSelection() {
     if (window.getSelection) {
         window.getSelection().removeAllRanges();
@@ -53,7 +50,6 @@ function clearSelection() {
         document.selection.empty();
     }
 }
-
 
 
 // Supprime la mise en forme de tout le document
@@ -78,111 +74,119 @@ function actionOnText(style, status,value) {
 }
 
 
+
 // Fonction principale
 function main() {
 
 
-
-    $('#main').on('keyup', function(){
+    // Au clic sur l'onglet 'code'
+    $(".second").on("click",function() {
+        $("#code").removeClass("hidden");
+        $("#visuel").addClass("hidden");
+        $(".first").css('background','#b8b8b8')
+        $(this).css('background','#d8d8d8')
+        $(this).addClass("active");
         var main_content = getMainContent();  
-        console.log(main_content);
         displayCode(main_content);
     });
-    
+
+
+    // Au clic sur l'onglet visuel
+    $(".first").on("click",function(){
+        $("#visuel").removeClass("hidden");
+        $("#code").addClass("hidden");
+        $(this).css('background','#d8d8d8')
+        $(".second").css('background','#b8b8b8');
+    });
+
+
+    // Au clic sur les éléments de la liste déroulante
+    // NE FONCTIONNE PAS SOUS CHROME
     $('#liste-deroulante option:nth-of-type(1)').on('click', function(){
         actionOnText("formatBlock",false,"<p>");
     });
-
     $('#liste-deroulante option:nth-of-type(2)').on('click', function(){
         actionOnText("formatBlock",false,"<h1>");
     });
-
     $('#liste-deroulante option:nth-of-type(3)').on('click', function(){
         actionOnText("formatBlock",false,"<h2>");
     });
-
     $('#liste-deroulante option:nth-of-type(4)').on('click', function(){
         actionOnText("formatBlock",false,"<h3>");
     });
-
     $('#liste-deroulante option:nth-of-type(5)').on('click', function(){
         actionOnText("formatBlock",false,"<h4>");
     });
-
     $('#liste-deroulante option:nth-of-type(6)').on('click', function(){
         actionOnText("formatBlock",false,"<h5>");
     });
-
     $('#liste-deroulante option:nth-of-type(7)').on('click', function(){
         actionOnText("formatBlock",false,"<h6>");
     });
 
+
+    // Au clic sur les boutons de style
     $('#gras').on('click', function(){
         actionOnText("bold",false,null);
     });
-
     $('#italique').on('click', function(){
         actionOnText("italic",false,null);
     });
 
+    // Au clic sur les boutons de liste
     $('#liste-ul').on('click', function(){
-        actionOnText("InsertUnorderedList",false,null);
+        actionOnText("insertUnorderedList",false,null);
     });
-
     $('#liste-ol').on('click', function(){
-        actionOnText("InsertOrderedList",false,null);
+        actionOnText("insertOrderedList",false,null);
     });
 
-    $('#al-gauche').on('click', function(){
+
+    // Au clic sur les boutons d'alignement de texte
+    $('#al-gauche').on('click', function(){ 
+        // NE FONCTIONNE PAS
         actionOnText("justifyLeft",false,null);
     });
-
     $('#al-centre').on('click', function(){
         actionOnText("justifyCenter",false,null);
     });
-
     $('#al-droite').on('click', function(){
         actionOnText("justifyRight",false,null);
     });
-
     $('#al-justifie').on('click', function(){
         actionOnText("justifyFull",false,null);
     });
 
-    // Ajouter cursor pointer sur le lien
+
+    // Ajouter ou supprimer un lien
+    // A AMELIORER ?
     $('#lien').on('click', function(){
-        var linkURL = prompt("Entrez l'URL du lien : ")
+        var linkURL = prompt("Entrez l'URL du lien (http(s)://) : ")
         actionOnText("createLink",false,linkURL);
     });
-
     $('#pas-de-lien').on('click', function(){
         actionOnText("unlink",false,null);
     });   
 
+
+    // Palette de couleur
+    // Au clic sur le bouton 'A'
+    $('#couleur').on('click', function(){
+        $('#palette').toggleClass('hidden');
+        //document.onclick = actionOnText("foreColor",false,selColor);
+    });
+    // Au clic sur sur une des cases de couleur
+    //CERTAINES COULEURS NE SONT PAS OK
+    // ELLES SONT DECALEES
      $("#camaieu div").on("click",function() {
         selColor = $(this).attr("class");
-        //$("li").removeClass("selected");
-        //$(this).toggleClass("selected");
         console.log(selColor);
-        // console.log(selColor2);
         document.onclick = actionOnText("foreColor",false,selColor);
-        console.log(selColor);
-
-
     });
     
-    $('#couleur').on('click', function(){
-        //var color = prompt('Saisissez une couleur prédéfinie ou un code hexadécimal :');
-        // document.onclick = actionOnText("foreColor",false,color);
+    
 
-        //Faire apparaitre la palette
-        //récupérer la couleur cliquée
-        //insérer la couleur dans le execcommand
-        $('#palette').toggleClass('hidden');
 
-        document.onclick = actionOnText("foreColor",false,selColor);
-        // console.log(selColor);
-    });
 
 
     // ne fonctionne pas / Intégrer le travail de Loutfi

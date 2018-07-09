@@ -1,5 +1,3 @@
-'use strict';
-
 
 var selColor;
 
@@ -105,7 +103,7 @@ function main() {
         $("#visuel").addClass("hidden");
         $(".first").css('background', '#b8b8b8')
         $(this).css('background', '#d8d8d8')
-        $(this).addClass("active");
+        // $(this).addClass("active");
         var main_content = getMainContent();
         displayCode(main_content);
     });
@@ -143,44 +141,59 @@ function main() {
 
 
     // Au clic sur les boutons de style
-    $('#gras').on('click', function() {
-        actionOnText("bold", false, null);
+        // rajout de toggle au click(change le background)
+     $('#gras').on('click', function(){
+        $(this).toggleClass("active");
+        actionOnText("bold",false,null);
     });
-    $('#italique').on('click', function() {
-        actionOnText("italic", false, null);
+    $('#italique').on('click', function(){
+        $(this).toggleClass("active");
+        actionOnText("italic",false,null);
     });
 
     // Au clic sur les boutons de liste
-    $('#liste-ul').on('click', function() {
-        actionOnText("insertUnorderedList", false, null);
+    // rajout de toggle au click(change le background)
+    $('#liste-ul').on('click', function(){
+        $(this).toggleClass("active");
+        actionOnText("insertUnorderedList",false,null);
     });
-    $('#liste-ol').on('click', function() {
-        actionOnText("insertOrderedList", false, null);
+    $('#liste-ol').on('click', function(){
+        $(this).toggleClass("active");
+        actionOnText("insertOrderedList",false,null);
     });
 
 
     // Au clic sur les boutons d'alignement de texte
-    $('#al-gauche').on('click', function() {
-        actionOnText("justifyLeft", false, null);
+    // rajout de toggle au click(change le background)
+    $('#al-gauche').on('click', function(){ 
+        $(this).toggleClass("active");
+        // NE FONCTIONNE PAS
+        actionOnText("justifyLeft",false,null);
     });
-    $('#al-centre').on('click', function() {
-        actionOnText("justifyCenter", false, null);
+    $('#al-centre').on('click', function(){
+        $(this).toggleClass("active");
+
+        actionOnText("justifyCenter",false,null);
     });
-    $('#al-droite').on('click', function() {
-        actionOnText("justifyRight", false, null);
+    $('#al-droite').on('click', function(){
+        $(this).toggleClass("active");
+        actionOnText("justifyRight",false,null);
     });
-    $('#al-justifie').on('click', function() {
-        actionOnText("justifyFull", false, null);
+    $('#al-justifie').on('click', function(){
+        $(this).toggleClass("active");
+        actionOnText("justifyFull",false,null);
     });
 
 
     // Ajouter ou supprimer un lien
     // A AMELIORER ?
     $('#lien').on('click', function() {
+    	$(this).toggleClass("active");
         var linkURL = prompt("Entrez l'URL du lien (http(s)://) : ")
         actionOnText("createLink", false, linkURL);
     });
     $('#pas-de-lien').on('click', function() {
+    	$(this).toggleClass("active");
         actionOnText("unlink", false, null);
     });
 

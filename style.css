@@ -5,6 +5,8 @@ body {
   box-sizing: border-box; }
   body .hidden {
     display: none !important; }
+  body .active {
+    background-color: #b8b8b8 !important; }
   body #container {
     display: flex;
     flex-direction: column;
@@ -17,7 +19,7 @@ body {
       display: flex;
       justify-content: flex-end;
       top: 0;
-      height: 20%;
+      height: 5%;
       list-style-type: none; }
       body #container #onglets li {
         width: auto;
@@ -32,8 +34,6 @@ body {
       body #container #onglets .second {
         background-color: #b8b8b8;
         cursor: pointer; }
-      body #container #onglets .active {
-        background-color: #d8d8d8; }
     body #container #visuel {
       display: flex;
       flex-direction: column;
@@ -222,8 +222,7 @@ body {
               position: relative;
               border: 1px solid transparent; }
               body #container #visuel header #barretaches li.tache:hover {
-                border: 1px solid #9c9c9c;
-                background: #d8d8d8; }
+                border: 1px solid #9c9c9c; }
                 body #container #visuel header #barretaches li.tache:hover .infob {
                   visibility: visible; }
               body #container #visuel header #barretaches li.tache .infob {
